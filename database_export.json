@@ -1,0 +1,740 @@
+[
+  {
+    "collection": "users",
+    "data": [
+      {
+        "_id": "66a12f3d4b8c9e1234567890",
+        "email": "vivearoua@gmail.com",
+        "password": "$2b$10$rGl5q7A8xKz9vU2mN3pL5eF7hT9wX6cV4sR8dY1nB5jH3kL7mP9qZ",
+        "profile": {
+          "firstName": "Viviane",
+          "lastName": "Aroua",
+          "company": "Digital Solutions SARL",
+          "siret": "12345678901234",
+          "address": {
+            "street": "123 Rue de la République",
+            "city": "Paris",
+            "postalCode": "75001",
+            "country": "France"
+          },
+          "phone": "+33 1 23 45 67 89",
+          "website": "www.digital-solutions.fr"
+        },
+        "settings": {
+          "currency": "EUR",
+          "language": "fr",
+          "timezone": "Europe/Paris",
+          "taxRate": 20.0,
+          "invoicePrefix": "F",
+          "quotePrefix": "D",
+          "nextInvoiceNumber": 4,
+          "nextQuoteNumber": 3
+        },
+        "subscription": {
+          "plan": "pro",
+          "startDate": "2025-01-01T00:00:00.000Z",
+          "endDate": "2025-12-31T23:59:59.000Z",
+          "features": ["invoicing", "quotes", "clients", "articles", "reports"]
+        },
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-06-30T12:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "collection": "clients",
+    "data": [
+      {
+        "_id": "66a12f3d4b8c9e1234567891",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "clientNumber": "C001",
+        "type": "company",
+        "name": "ABC SARL",
+        "contactPerson": "Jean Dupont",
+        "email": "contact@abc-sarl.fr",
+        "phone": "01.23.45.67.89",
+        "website": "www.abc-sarl.fr",
+        "address": {
+          "street": "456 Boulevard Haussmann",
+          "city": "Paris",
+          "postalCode": "75008",
+          "country": "France"
+        },
+        "siret": "98765432101234",
+        "tva": "FR98765432101",
+        "codeAPE": "6201Z",
+        "paymentTerms": 30,
+        "defaultDiscount": 0,
+        "notes": "Client privilégié depuis 2023",
+        "stats": {
+          "totalInvoices": 15,
+          "totalAmount": 12450.00,
+          "lastInvoiceDate": "2025-06-25T00:00:00.000Z",
+          "averagePaymentDelay": 25
+        },
+        "isActive": true,
+        "createdAt": "2025-01-15T00:00:00.000Z",
+        "updatedAt": "2025-06-30T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e1234567892",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "clientNumber": "C002",
+        "type": "company",
+        "name": "XYZ Consulting",
+        "contactPerson": "Marie Dubois",
+        "email": "info@xyz-consulting.fr",
+        "phone": "01.98.76.54.32",
+        "website": "www.xyz-consulting.fr",
+        "address": {
+          "street": "789 Avenue de la Grande Armée",
+          "city": "Lyon",
+          "postalCode": "69001",
+          "country": "France"
+        },
+        "siret": "11111111111111",
+        "tva": "FR11111111111",
+        "codeAPE": "7022Z",
+        "paymentTerms": 45,
+        "defaultDiscount": 5,
+        "notes": "Spécialisé dans la transformation digitale",
+        "stats": {
+          "totalInvoices": 8,
+          "totalAmount": 8920.00,
+          "lastInvoiceDate": "2025-06-20T00:00:00.000Z",
+          "averagePaymentDelay": 35
+        },
+        "isActive": true,
+        "createdAt": "2025-02-01T00:00:00.000Z",
+        "updatedAt": "2025-06-30T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e1234567893",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "clientNumber": "C003",
+        "type": "company",
+        "name": "Tech Solutions",
+        "contactPerson": "Pierre Martin",
+        "email": "hello@techsolutions.fr",
+        "phone": "01.11.22.33.44",
+        "website": "www.techsolutions.fr",
+        "address": {
+          "street": "321 Rue de Rivoli",
+          "city": "Marseille",
+          "postalCode": "13001",
+          "country": "France"
+        },
+        "siret": "22222222222222",
+        "tva": "FR22222222222",
+        "codeAPE": "6202A",
+        "paymentTerms": 30,
+        "defaultDiscount": 0,
+        "notes": "Startup en forte croissance",
+        "stats": {
+          "totalInvoices": 22,
+          "totalAmount": 18670.50,
+          "lastInvoiceDate": "2025-06-28T00:00:00.000Z",
+          "averagePaymentDelay": 18
+        },
+        "isActive": true,
+        "createdAt": "2025-01-20T00:00:00.000Z",
+        "updatedAt": "2025-06-30T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e1234567894",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "clientNumber": "C004",
+        "type": "individual",
+        "name": "Sophie Leroy",
+        "contactPerson": "Sophie Leroy",
+        "email": "sophie.leroy@gmail.com",
+        "phone": "06.12.34.56.78",
+        "address": {
+          "street": "12 Rue des Lilas",
+          "city": "Nantes",
+          "postalCode": "44000",
+          "country": "France"
+        },
+        "paymentTerms": 15,
+        "defaultDiscount": 0,
+        "notes": "Freelance graphiste",
+        "stats": {
+          "totalInvoices": 3,
+          "totalAmount": 1250.00,
+          "lastInvoiceDate": "2025-06-10T00:00:00.000Z",
+          "averagePaymentDelay": 12
+        },
+        "isActive": true,
+        "createdAt": "2025-03-15T00:00:00.000Z",
+        "updatedAt": "2025-06-30T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "collection": "articles",
+    "data": [
+      {
+        "_id": "66a12f3d4b8c9e1234567895",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "articleNumber": "ART001",
+        "name": "Développement Web",
+        "description": "Service de développement web sur mesure avec React et Node.js",
+        "category": "Services",
+        "pricing": {
+          "unitPrice": 75.00,
+          "unit": "heure",
+          "currency": "EUR",
+          "taxRate": 20.0
+        },
+        "inventory": {
+          "tracked": false,
+          "quantity": null,
+          "minQuantity": null
+        },
+        "isActive": true,
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-06-30T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e1234567896",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "articleNumber": "ART002",
+        "name": "Consultation IT",
+        "description": "Consultation en technologies de l'information et stratégie digitale",
+        "category": "Conseil",
+        "pricing": {
+          "unitPrice": 120.00,
+          "unit": "heure",
+          "currency": "EUR",
+          "taxRate": 20.0
+        },
+        "inventory": {
+          "tracked": false,
+          "quantity": null,
+          "minQuantity": null
+        },
+        "isActive": true,
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-06-30T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e1234567897",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "articleNumber": "ART003",
+        "name": "Formation React",
+        "description": "Formation développement React avancé - 7 heures",
+        "category": "Formation",
+        "pricing": {
+          "unitPrice": 450.00,
+          "unit": "jour",
+          "currency": "EUR",
+          "taxRate": 20.0
+        },
+        "inventory": {
+          "tracked": false,
+          "quantity": null,
+          "minQuantity": null
+        },
+        "isActive": true,
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-06-30T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e1234567898",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "articleNumber": "ART004",
+        "name": "Audit SEO",
+        "description": "Audit complet SEO avec recommandations et plan d'action",
+        "category": "Services",
+        "pricing": {
+          "unitPrice": 950.00,
+          "unit": "forfait",
+          "currency": "EUR",
+          "taxRate": 20.0
+        },
+        "inventory": {
+          "tracked": false,
+          "quantity": null,
+          "minQuantity": null
+        },
+        "isActive": true,
+        "createdAt": "2025-01-10T00:00:00.000Z",
+        "updatedAt": "2025-06-30T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e1234567899",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "articleNumber": "ART005",
+        "name": "Maintenance Web",
+        "description": "Maintenance et mise à jour de site web mensuelle",
+        "category": "Services",
+        "pricing": {
+          "unitPrice": 150.00,
+          "unit": "mois",
+          "currency": "EUR",
+          "taxRate": 20.0
+        },
+        "inventory": {
+          "tracked": false,
+          "quantity": null,
+          "minQuantity": null
+        },
+        "isActive": true,
+        "createdAt": "2025-01-05T00:00:00.000Z",
+        "updatedAt": "2025-06-30T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "collection": "invoices",
+    "data": [
+      {
+        "_id": "66a12f3d4b8c9e123456789a",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "clientId": "66a12f3d4b8c9e1234567891",
+        "invoiceNumber": "F001",
+        "invoiceDate": "2025-06-15T00:00:00.000Z",
+        "dueDate": "2025-07-15T00:00:00.000Z",
+        "status": "paid",
+        "items": [
+          {
+            "articleId": "66a12f3d4b8c9e1234567895",
+            "description": "Développement Web - Site e-commerce",
+            "quantity": 15,
+            "unitPrice": 75.00,
+            "totalHT": 1125.00,
+            "taxRate": 20.0,
+            "taxAmount": 225.00,
+            "totalTTC": 1350.00
+          },
+          {
+            "articleId": "66a12f3d4b8c9e1234567899",
+            "description": "Maintenance Web - 3 mois",
+            "quantity": 3,
+            "unitPrice": 150.00,
+            "totalHT": 450.00,
+            "taxRate": 20.0,
+            "taxAmount": 90.00,
+            "totalTTC": 540.00
+          }
+        ],
+        "totals": {
+          "subtotalHT": 1575.00,
+          "totalTax": 315.00,
+          "totalTTC": 1890.00,
+          "discount": 0.00,
+          "grandTotal": 1890.00
+        },
+        "payment": {
+          "method": "virement",
+          "reference": "VIR20250710001",
+          "paidDate": "2025-07-10T00:00:00.000Z",
+          "paidAmount": 1890.00
+        },
+        "clientSnapshot": {
+          "name": "ABC SARL",
+          "contactPerson": "Jean Dupont",
+          "address": {
+            "street": "456 Boulevard Haussmann",
+            "city": "Paris",
+            "postalCode": "75008",
+            "country": "France"
+          },
+          "siret": "98765432101234"
+        },
+        "currency": "EUR",
+        "language": "fr",
+        "notes": "Merci pour votre confiance. Développement réalisé selon le cahier des charges.",
+        "files": [
+          {
+            "name": "facture_F001.pdf",
+            "url": "/uploads/invoices/facture_F001.pdf",
+            "size": 245678,
+            "uploadedAt": "2025-06-15T10:30:00.000Z"
+          }
+        ],
+        "createdAt": "2025-06-15T00:00:00.000Z",
+        "updatedAt": "2025-07-10T14:30:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e123456789b",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "clientId": "66a12f3d4b8c9e1234567892",
+        "invoiceNumber": "F002",
+        "invoiceDate": "2025-06-20T00:00:00.000Z",
+        "dueDate": "2025-08-04T00:00:00.000Z",
+        "status": "sent",
+        "items": [
+          {
+            "articleId": "66a12f3d4b8c9e1234567896",
+            "description": "Consultation IT - Transformation digitale",
+            "quantity": 20,
+            "unitPrice": 120.00,
+            "totalHT": 2400.00,
+            "taxRate": 20.0,
+            "taxAmount": 480.00,
+            "totalTTC": 2880.00
+          }
+        ],
+        "totals": {
+          "subtotalHT": 2400.00,
+          "totalTax": 480.00,
+          "totalTTC": 2880.00,
+          "discount": 144.00,
+          "grandTotal": 2736.00
+        },
+        "clientSnapshot": {
+          "name": "XYZ Consulting",
+          "contactPerson": "Marie Dubois",
+          "address": {
+            "street": "789 Avenue de la Grande Armée",
+            "city": "Lyon",
+            "postalCode": "69001",
+            "country": "France"
+          },
+          "siret": "11111111111111"
+        },
+        "currency": "EUR",
+        "language": "fr",
+        "notes": "Paiement à 45 jours. Remise de 5% appliquée.",
+        "createdAt": "2025-06-20T00:00:00.000Z",
+        "updatedAt": "2025-06-20T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e123456789c",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "clientId": "66a12f3d4b8c9e1234567893",
+        "invoiceNumber": "F003",
+        "invoiceDate": "2025-06-25T00:00:00.000Z",
+        "dueDate": "2025-07-25T00:00:00.000Z",
+        "status": "overdue",
+        "items": [
+          {
+            "articleId": "66a12f3d4b8c9e1234567897",
+            "description": "Formation React - Équipe de 4 développeurs",
+            "quantity": 2,
+            "unitPrice": 450.00,
+            "totalHT": 900.00,
+            "taxRate": 20.0,
+            "taxAmount": 180.00,
+            "totalTTC": 1080.00
+          }
+        ],
+        "totals": {
+          "subtotalHT": 900.00,
+          "totalTax": 180.00,
+          "totalTTC": 1080.00,
+          "discount": 0.00,
+          "grandTotal": 1080.00
+        },
+        "clientSnapshot": {
+          "name": "Tech Solutions",
+          "contactPerson": "Pierre Martin",
+          "address": {
+            "street": "321 Rue de Rivoli",
+            "city": "Marseille",
+            "postalCode": "13001",
+            "country": "France"
+          },
+          "siret": "22222222222222"
+        },
+        "currency": "EUR",
+        "language": "fr",
+        "notes": "Formation dispensée en ligne via Teams. Support inclus pendant 1 mois.",
+        "createdAt": "2025-06-25T00:00:00.000Z",
+        "updatedAt": "2025-06-25T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "collection": "quotes",
+    "data": [
+      {
+        "_id": "66a12f3d4b8c9e123456789d",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "clientId": "66a12f3d4b8c9e1234567891",
+        "quoteNumber": "D001",
+        "quoteDate": "2025-06-28T00:00:00.000Z",
+        "validUntil": "2025-07-28T00:00:00.000Z",
+        "status": "accepted",
+        "items": [
+          {
+            "articleId": "66a12f3d4b8c9e1234567898",
+            "description": "Audit SEO complet avec recommandations",
+            "quantity": 1,
+            "unitPrice": 950.00,
+            "totalHT": 950.00,
+            "taxRate": 20.0,
+            "taxAmount": 190.00,
+            "totalTTC": 1140.00
+          }
+        ],
+        "totals": {
+          "subtotalHT": 950.00,
+          "totalTax": 190.00,
+          "totalTTC": 1140.00,
+          "discount": 0.00,
+          "grandTotal": 1140.00
+        },
+        "convertedToInvoice": {
+          "invoiceId": "66a12f3d4b8c9e123456789e",
+          "invoiceNumber": "F004",
+          "convertedAt": "2025-07-01T00:00:00.000Z"
+        },
+        "clientSnapshot": {
+          "name": "ABC SARL",
+          "contactPerson": "Jean Dupont",
+          "address": {
+            "street": "456 Boulevard Haussmann",
+            "city": "Paris",
+            "postalCode": "75008",
+            "country": "France"
+          }
+        },
+        "currency": "EUR",
+        "language": "fr",
+        "notes": "Devis valable 30 jours. Audit à réaliser sur 2 semaines.",
+        "createdAt": "2025-06-28T00:00:00.000Z",
+        "updatedAt": "2025-07-01T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e123456789f",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "clientId": "66a12f3d4b8c9e1234567894",
+        "quoteNumber": "D002",
+        "quoteDate": "2025-06-29T00:00:00.000Z",
+        "validUntil": "2025-07-29T00:00:00.000Z",
+        "status": "sent",
+        "items": [
+          {
+            "articleId": "66a12f3d4b8c9e1234567895",
+            "description": "Développement site portfolio responsive",
+            "quantity": 25,
+            "unitPrice": 75.00,
+            "totalHT": 1875.00,
+            "taxRate": 20.0,
+            "taxAmount": 375.00,
+            "totalTTC": 2250.00
+          }
+        ],
+        "totals": {
+          "subtotalHT": 1875.00,
+          "totalTax": 375.00,
+          "totalTTC": 2250.00,
+          "discount": 0.00,
+          "grandTotal": 2250.00
+        },
+        "clientSnapshot": {
+          "name": "Sophie Leroy",
+          "contactPerson": "Sophie Leroy",
+          "address": {
+            "street": "12 Rue des Lilas",
+            "city": "Nantes",
+            "postalCode": "44000",
+            "country": "France"
+          }
+        },
+        "currency": "EUR",
+        "language": "fr",
+        "notes": "Site portfolio avec galerie photo et blog. Design moderne et responsive.",
+        "createdAt": "2025-06-29T00:00:00.000Z",
+        "updatedAt": "2025-06-29T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "collection": "credit_notes",
+    "data": [
+      {
+        "_id": "66a12f3d4b8c9e12345678a0",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "clientId": "66a12f3d4b8c9e1234567891",
+        "invoiceId": "66a12f3d4b8c9e123456789a",
+        "creditNoteNumber": "AV001",
+        "creditNoteDate": "2025-06-20T00:00:00.000Z",
+        "type": "discount",
+        "reason": "Remise commerciale exceptionnelle",
+        "amount": 189.00,
+        "currency": "EUR",
+        "status": "issued",
+        "createdAt": "2025-06-20T00:00:00.000Z",
+        "updatedAt": "2025-06-20T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "collection": "purchase_invoices",
+    "data": [
+      {
+        "_id": "66a12f3d4b8c9e12345678a1",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "supplier": {
+          "name": "OVH SAS",
+          "siret": "42419210012345",
+          "address": {
+            "street": "2 Rue Kellermann",
+            "city": "Roubaix",
+            "postalCode": "59100",
+            "country": "France"
+          }
+        },
+        "supplierInvoiceNumber": "OVH-2025-06-001",
+        "invoiceDate": "2025-06-01T00:00:00.000Z",
+        "dueDate": "2025-07-01T00:00:00.000Z",
+        "amount": 89.90,
+        "currency": "EUR",
+        "category": "hosting",
+        "status": "paid",
+        "paidDate": "2025-06-05T00:00:00.000Z",
+        "description": "Hébergement VPS mensuel - Serveur de production",
+        "notes": "Serveur dédié 4GB RAM, 80GB SSD",
+        "attachments": [
+          {
+            "filename": "facture_ovh_juin_2025.pdf",
+            "url": "/uploads/purchases/facture_ovh_juin_2025.pdf"
+          }
+        ],
+        "createdAt": "2025-06-01T00:00:00.000Z",
+        "updatedAt": "2025-06-05T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e12345678a2",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "supplier": {
+          "name": "Adobe France",
+          "siret": "78945612312345",
+          "address": {
+            "street": "32 Rue Blanche",
+            "city": "Paris",
+            "postalCode": "75009",
+            "country": "France"
+          }
+        },
+        "supplierInvoiceNumber": "ADOBE-CC-2025-06",
+        "invoiceDate": "2025-06-15T00:00:00.000Z",
+        "dueDate": "2025-07-15T00:00:00.000Z",
+        "amount": 59.99,
+        "currency": "EUR",
+        "category": "software",
+        "status": "paid",
+        "paidDate": "2025-06-16T00:00:00.000Z",
+        "description": "Abonnement Adobe Creative Cloud - Juin 2025",
+        "notes": "Licence complète Photoshop, Illustrator, InDesign",
+        "createdAt": "2025-06-15T00:00:00.000Z",
+        "updatedAt": "2025-06-16T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "collection": "expense_reports",
+    "data": [
+      {
+        "_id": "66a12f3d4b8c9e12345678a3",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "title": "Déplacement client ABC SARL - Réunion de suivi",
+        "date": "2025-06-15T00:00:00.000Z",
+        "category": "travel",
+        "amount": 45.60,
+        "currency": "EUR",
+        "description": "Frais de transport en commun pour réunion client",
+        "location": "Paris - La Défense",
+        "reimbursement": {
+          "status": "approved",
+          "requestedDate": "2025-06-16T00:00:00.000Z",
+          "approvedDate": "2025-06-20T00:00:00.000Z",
+          "paidDate": null
+        },
+        "receipts": [
+          {
+            "filename": "ticket_metro_15_06_2025.jpg",
+            "url": "/uploads/expenses/ticket_metro_15_06_2025.jpg"
+          }
+        ],
+        "createdAt": "2025-06-15T00:00:00.000Z",
+        "updatedAt": "2025-06-20T00:00:00.000Z"
+      },
+      {
+        "_id": "66a12f3d4b8c9e12345678a4",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "title": "Repas d'affaires avec prospect",
+        "date": "2025-06-22T00:00:00.000Z",
+        "category": "meals",
+        "amount": 78.50,
+        "currency": "EUR",
+        "description": "Déjeuner professionnel avec prospect Tech Solutions",
+        "location": "Restaurant Le Moderne - Marseille",
+        "reimbursement": {
+          "status": "pending",
+          "requestedDate": "2025-06-23T00:00:00.000Z",
+          "approvedDate": null,
+          "paidDate": null
+        },
+        "receipts": [
+          {
+            "filename": "facture_restaurant_22_06_2025.pdf",
+            "url": "/uploads/expenses/facture_restaurant_22_06_2025.pdf"
+          }
+        ],
+        "createdAt": "2025-06-22T00:00:00.000Z",
+        "updatedAt": "2025-06-23T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "collection": "settings",
+    "data": [
+      {
+        "_id": "66a12f3d4b8c9e12345678a5",
+        "userId": "66a12f3d4b8c9e1234567890",
+        "company": {
+          "name": "Digital Solutions SARL",
+          "logo": "/uploads/logo_digital_solutions.png",
+          "siret": "12345678901234",
+          "tva": "FR12345678901",
+          "address": {
+            "street": "123 Rue de la République",
+            "city": "Paris",
+            "postalCode": "75001",
+            "country": "France"
+          },
+          "contact": {
+            "phone": "+33 1 23 45 67 89",
+            "email": "contact@digital-solutions.fr",
+            "website": "www.digital-solutions.fr"
+          }
+        },
+        "invoicing": {
+          "invoicePrefix": "F",
+          "quotePrefix": "D",
+          "nextInvoiceNumber": 4,
+          "nextQuoteNumber": 3,
+          "defaultPaymentTerms": 30,
+          "defaultTaxRate": 20.0,
+          "currency": "EUR",
+          "language": "fr"
+        },
+        "emailTemplates": {
+          "invoiceSent": {
+            "subject": "Facture {{invoiceNumber}} - {{companyName}}",
+            "body": "Bonjour {{clientName}},\n\nVeuillez trouver ci-joint la facture {{invoiceNumber}} d'un montant de {{amount}} €.\n\nCette facture est à régler avant le {{dueDate}}.\n\nCordialement,\n{{companyName}}"
+          },
+          "quoteSent": {
+            "subject": "Devis {{quoteNumber}} - {{companyName}}",
+            "body": "Bonjour {{clientName}},\n\nVeuillez trouver ci-joint le devis {{quoteNumber}} d'un montant de {{amount}} €.\n\nCe devis est valable jusqu'au {{validUntil}}.\n\nCordialement,\n{{companyName}}"
+          },
+          "paymentReminder": {
+            "subject": "Rappel de paiement - Facture {{invoiceNumber}}",
+            "body": "Bonjour {{clientName}},\n\nNous vous rappelons que la facture {{invoiceNumber}} d'un montant de {{amount}} € était à régler le {{dueDate}}.\n\nMerci de procéder au règlement dans les plus brefs délais.\n\nCordialement,\n{{companyName}}"
+          }
+        },
+        "notifications": {
+          "emailNotifications": true,
+          "reminderDays": [7, 3, 1],
+          "overdueReminderDays": [1, 7, 14, 30]
+        },
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-06-30T00:00:00.000Z"
+      }
+    ]
+  }
+]
