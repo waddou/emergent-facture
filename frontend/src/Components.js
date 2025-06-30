@@ -858,6 +858,35 @@ export const Invoices = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [selectedInvoice, setSelectedInvoice] = useState(null);
+  const [convertingQuote, setConvertingQuote] = useState(null);
+
+  // Get shared state from context if available
+  const contextValue = React.useContext(React.createContext());
+  
+  // Listen for conversion from quotes
+  useEffect(() => {
+    const handleQuoteConversion = (event) => {
+      if (event.detail && event.detail.type === 'convertQuoteToInvoice') {
+        const quote = event.detail.quote;
+        const newInvoice = {
+          id: `F${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}`,
+          client: quote.client,
+          clientId: quote.clientId,
+          date: quote.date,
+          dueDate: quote.validUntil,
+          items: quote.items,
+          notes: `Facture générée à partir du devis ${quote.id}`,
+          amount: quote.amount,
+          status: 'Brouillon'
+        };
+        setInvoices(prev => [...prev, newInvoice]);
+        alert(`Facture ${newInvoice.id} créée avec succès à partir du devis ${quote.id}`);
+      }
+    };
+
+    window.addEventListener('quoteConversion', handleQuoteConversion);
+    return () => window.removeEventListener('quoteConversion', handleQuoteConversion);
+  }, []);
 
   const handleCreateInvoice = (newInvoice) => {
     setInvoices([...invoices, newInvoice]);
