@@ -1,4 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+// Import useAppContext from App.js
+const useAppContext = () => {
+  return React.useContext(React.createContext());
+};
+
+// Utility functions for date conversion
+const formatDateToInput = (dateString) => {
+  if (!dateString) return '';
+  // Convert from DD/MM/YYYY to YYYY-MM-DD
+  if (dateString.includes('/')) {
+    const [day, month, year] = dateString.split('/');
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  }
+  return dateString;
+};
+
+const formatDateFromInput = (dateString) => {
+  if (!dateString) return '';
+  // Convert from YYYY-MM-DD to DD/MM/YYYY
+  if (dateString.includes('-')) {
+    const [year, month, day] = dateString.split('-');
+    return `${day}/${month}/${year}`;
+  }
+  return dateString;
+};
 
 // Mock Data with more comprehensive information
 const initialInvoices = [
@@ -7,9 +33,9 @@ const initialInvoices = [
     client: 'ABC SARL', 
     clientId: 1,
     amount: '1,250.00', 
-    date: '15/06/2025', 
+    date: formatDateFromInput('2025-06-15'), 
     status: 'Payée', 
-    dueDate: '15/07/2025',
+    dueDate: formatDateFromInput('2025-07-15'),
     items: [
       { description: 'Développement Web', quantity: 15, unitPrice: 75, total: 1125 },
       { description: 'Maintenance', quantity: 5, unitPrice: 25, total: 125 }
@@ -21,9 +47,9 @@ const initialInvoices = [
     client: 'XYZ Consulting', 
     clientId: 2,
     amount: '2,100.00', 
-    date: '20/06/2025', 
+    date: formatDateFromInput('2025-06-20'), 
     status: 'En attente', 
-    dueDate: '20/07/2025',
+    dueDate: formatDateFromInput('2025-07-20'),
     items: [
       { description: 'Consultation IT', quantity: 20, unitPrice: 120, total: 2400 }
     ],
@@ -34,9 +60,9 @@ const initialInvoices = [
     client: 'Tech Solutions', 
     clientId: 3,
     amount: '890.50', 
-    date: '25/06/2025', 
+    date: formatDateFromInput('2025-06-25'), 
     status: 'Envoyée', 
-    dueDate: '25/07/2025',
+    dueDate: formatDateFromInput('2025-07-25'),
     items: [
       { description: 'Formation React', quantity: 2, unitPrice: 450, total: 900 }
     ],
