@@ -65,37 +65,39 @@ function App() {
   };
 
   return (
-    <div className="App min-h-screen bg-gray-50">
-      <BrowserRouter>
-        <div className="flex h-screen">
-          {/* Sidebar */}
-          <Sidebar 
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            collapsed={sidebarCollapsed}
-          />
-          
-          {/* Main Content */}
-          <div className="flex-1 flex flex-col overflow-hidden">
-            {/* Header */}
-            <Header 
-              setSidebarCollapsed={setSidebarCollapsed}
-              sidebarCollapsed={sidebarCollapsed}
+    <AppContext.Provider value={{ globalState, updateGlobalState }}>
+      <div className="App min-h-screen bg-gray-50">
+        <BrowserRouter>
+          <div className="flex h-screen">
+            {/* Sidebar */}
+            <Sidebar 
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              collapsed={sidebarCollapsed}
             />
             
-            {/* Test Mode Banner */}
-            {testMode && (
-              <TestModeBanner onClose={() => setTestMode(false)} />
-            )}
-            
-            {/* Page Content */}
-            <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
-              {renderCurrentPage()}
-            </main>
+            {/* Main Content */}
+            <div className="flex-1 flex flex-col overflow-hidden">
+              {/* Header */}
+              <Header 
+                setSidebarCollapsed={setSidebarCollapsed}
+                sidebarCollapsed={sidebarCollapsed}
+              />
+              
+              {/* Test Mode Banner */}
+              {testMode && (
+                <TestModeBanner onClose={() => setTestMode(false)} />
+              )}
+              
+              {/* Page Content */}
+              <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
+                {renderCurrentPage()}
+              </main>
+            </div>
           </div>
-        </div>
-      </BrowserRouter>
-    </div>
+        </BrowserRouter>
+      </div>
+    </AppContext.Provider>
   );
 }
 
