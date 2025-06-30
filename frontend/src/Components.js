@@ -381,7 +381,7 @@ const InvoiceForm = ({ invoice, clients, articles, onSave, onClose, isFromQuote 
           type="submit"
           className="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
         >
-          {invoice ? 'Modifier' : 'Créer'} la facture
+          {invoice ? 'Modifier' : 'Créer'} {isFromQuote ? 'la facture' : 'la facture'}
         </button>
       </div>
     </form>
