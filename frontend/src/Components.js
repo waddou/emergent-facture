@@ -1040,17 +1040,30 @@ export const Quotes = () => {
     const quote = {
       ...newQuote,
       id: `D${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}`,
-      status: 'Brouillon'
+      status: 'Brouillon',
+      validUntil: newQuote.dueDate // Use dueDate as validUntil for quotes
     };
     setQuotes([...quotes, quote]);
     setShowCreateModal(false);
   };
 
   const convertToInvoice = (quote) => {
-    if (window.confirm('Convertir ce devis en facture ?')) {
-      console.log('Converting quote to invoice:', quote);
-      // This would typically navigate to invoice creation with pre-filled data
-      alert('Devis converti en facture (fonctionnalité à implémenter)');
+    if (window.confirm(`Convertir le devis ${quote.id} en facture ?`)) {
+      // Dispatch custom event to notify invoice component
+      const event = new CustomEvent('quoteConversion', {
+        detail: {
+          type: 'convertQuoteToInvoice',
+          quote: quote
+        }
+      });
+      window.dispatchEvent(event);
+      
+      // Update quote status
+      setQuotes(quotes.map(q => 
+        q.id === quote.id 
+          ? { ...q, status: 'Converti' }
+          : q
+      ));
     }
   };
 
