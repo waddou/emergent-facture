@@ -190,11 +190,11 @@ const Modal = ({ isOpen, onClose, title, children }) => {
   );
 };
 
-const InvoiceForm = ({ invoice, clients, articles, onSave, onClose }) => {
+const InvoiceForm = ({ invoice, clients, articles, onSave, onClose, isFromQuote = false }) => {
   const [formData, setFormData] = useState({
     client: invoice?.client || '',
-    date: invoice?.date || new Date().toLocaleDateString('fr-FR'),
-    dueDate: invoice?.dueDate || '',
+    date: formatDateToInput(invoice?.date) || new Date().toISOString().split('T')[0],
+    dueDate: formatDateToInput(invoice?.dueDate) || '',
     items: invoice?.items || [{ description: '', quantity: 1, unitPrice: 0, total: 0 }],
     notes: invoice?.notes || ''
   });
@@ -230,6 +230,8 @@ const InvoiceForm = ({ invoice, clients, articles, onSave, onClose }) => {
     const newInvoice = {
       id: invoice?.id || `F${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}`,
       ...formData,
+      date: formatDateFromInput(formData.date),
+      dueDate: formatDateFromInput(formData.dueDate),
       amount: total.toLocaleString('fr-FR', { minimumFractionDigits: 2 }),
       status: invoice?.status || 'Brouillon'
     };
