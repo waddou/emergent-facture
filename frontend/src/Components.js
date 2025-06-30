@@ -1105,18 +1105,21 @@ export const Quotes = () => {
                     <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                       quote.status === 'Accepté' ? 'bg-green-100 text-green-800' :
                       quote.status === 'En attente' ? 'bg-yellow-100 text-yellow-800' :
+                      quote.status === 'Converti' ? 'bg-blue-100 text-blue-800' :
                       'bg-gray-100 text-gray-800'
                     }`}>
                       {quote.status}
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <button 
-                      onClick={() => convertToInvoice(quote)}
-                      className="text-indigo-600 hover:text-indigo-900 mr-3"
-                    >
-                      Convertir
-                    </button>
+                    {quote.status !== 'Converti' && (
+                      <button 
+                        onClick={() => convertToInvoice(quote)}
+                        className="text-indigo-600 hover:text-indigo-900 mr-3"
+                      >
+                        Convertir
+                      </button>
+                    )}
                     <button className="text-green-600 hover:text-green-900 mr-3">Modifier</button>
                     <button className="text-red-600 hover:text-red-900">Supprimer</button>
                   </td>
