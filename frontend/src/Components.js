@@ -115,9 +115,9 @@ const initialQuotes = [
     client: 'ABC SARL', 
     clientId: 1,
     amount: '950.00', 
-    date: '28/06/2025', 
+    date: formatDateFromInput('2025-06-28'), 
     status: 'Accepté', 
-    validUntil: '28/07/2025',
+    validUntil: formatDateFromInput('2025-07-28'),
     items: [
       { description: 'Audit SEO', quantity: 1, unitPrice: 950, total: 950 }
     ]
@@ -127,9 +127,9 @@ const initialQuotes = [
     client: 'New Client Corp', 
     clientId: null,
     amount: '1,800.00', 
-    date: '29/06/2025', 
+    date: formatDateFromInput('2025-06-29'), 
     status: 'En attente', 
-    validUntil: '29/07/2025',
+    validUntil: formatDateFromInput('2025-07-29'),
     items: [
       { description: 'Site web complet', quantity: 1, unitPrice: 1800, total: 1800 }
     ]
