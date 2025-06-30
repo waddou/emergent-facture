@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { 
@@ -15,10 +15,31 @@ import {
   ExpenseReports
 } from './Components';
 
+// Global state context
+const AppContext = createContext();
+
+export const useAppContext = () => useContext(AppContext);
+
 function App() {
   const [currentPage, setCurrentPage] = useState('dashboard');
   const [testMode, setTestMode] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+  // Global state for all data
+  const [globalState, setGlobalState] = useState({
+    invoices: [],
+    quotes: [],
+    clients: [],
+    articles: []
+  });
+
+  // Global functions to update state
+  const updateGlobalState = (key, data) => {
+    setGlobalState(prev => ({
+      ...prev,
+      [key]: data
+    }));
+  };
 
   const renderCurrentPage = () => {
     switch(currentPage) {
